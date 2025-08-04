@@ -120,16 +120,42 @@ header {
 
 .about-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   gap: 40px;
   align-items: flex-start;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-content {
   flex: 1 1 60%;
-  padding-left: 70px; /* ✅ Adds inner space from the left */
+  padding-left: 0;
+  order: 1;
+}
 
+.about-image {
+  flex: 1 1 35%;
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column;
+  }
+  
+  .about-content {
+    order: 1;
+  }
+  
+  .about-image {
+    order: 2;
+    margin-top: 30px;
+  }
 }
 
 .about-content h2,
